@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Demo host app; replace with your application's root -->
+  <main id="app" class="app" hidden>
+    <h1>Application</h1>
+    <p>The startup animation completed. Your app content goes here.</p>
+  </main>
+
+  <!-- Splash curtain -->
+  <div id="splash" class="splash" data-theme="light" role="dialog" aria-label="Startup sequence">
+    <div class="glass" aria-hidden="true"></div>
+
+    <!-- Rotating reticle with a gap at the bottom -->
+    <div class="reticle" aria-hidden="true">
+      <svg viewBox="0 0 120 120" width="120" height="120">
+        <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="1"
+                stroke-dasharray="270 44" transform="rotate(113 60 60)" />
+        <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- Skip control -->
+    <button id="splash-skip" class="skip" type="button">跳过 / SKIP</button>
+
+    <!-- Scene content -->
+    <section class="stage" aria-live="polite">
+      <div class="scene-index" id="scene-index">01 / 06</div>
+      <h1 class="primary" id="primary"></h1>
+      <p class="subtitle" id="subtitle"></p>
+
+      <!-- Identity card, visible in scene 2 -->
+      <div class="idcard" id="idcard" hidden>
+        <div class="card-corner tl"></div><div class="card-corner tr"></div>
+        <div class="card-corner bl"></div><div class="card-corner br"></div>
+        <div class="card-row"><span>NAME</span><b data-bind="identityName"></b></div>
+        <div class="card-row"><span>NO.</span><b data-bind="identityNumber"></b></div>
+        <div class="card-row"><span>CLEARANCE</span><b data-bind="clearanceLevel"></b></div>
+      </div>
+
+      <!-- Confirmation button for scenes 1-2 -->
+      <button id="splash-confirm" class="confirm" type="button" hidden>确认 / CONFIRM ↵</button>
+    </section>
+
+    <!-- Bottom log + progress -->
+    <footer class="hud">
+      <div class="log" id="log" role="status" aria-live="polite"></div>
+      <div class="progress-wrap">
+        <span class="stage-label" id="stage-label">AUTHORIZATION</span>
+        <div class="bar"><div class="bar-fill" id="bar-fill"></div></div>
+        <span class="pct" id="pct">0%</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="splash.js"></script>
+</body>
+</html>
