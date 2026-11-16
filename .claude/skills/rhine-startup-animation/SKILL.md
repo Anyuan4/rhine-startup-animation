@@ -2,6 +2,7 @@
 name: rhine-startup-animation
 description: This skill should be used when users ask to create, customize, or integrate a cinematic "startup / splash / boot" animation for an application — specifically the six-scene, interactive, dual-theme "access authorization" sequence inspired by the Rhine Lab "Access" sequence (厂牌标识 → 过曝洗白 → 暖白档案底板 → 五步访问授权 → 色散揭幕). Trigger on requests such as "做个启动动画", "开机动画", "splash screen", "启动过场", "访问授权动画", "Rhine/莱茵风格启动页", or when adapting the bundled splash template to a specific project. Produces runnable HTML/CSS/JS with configurable identity, timing, voice and theme.
 agent_created: true
+license: CC-BY-NC-4.0
 ---
 
 # Rhine-style startup animation
